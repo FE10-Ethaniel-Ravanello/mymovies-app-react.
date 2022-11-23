@@ -25,7 +25,7 @@ import {BsFillBookmarkFill} from 'react-icons/bs'
             </div>
             {/* Saved Button */}
             <button className='hidden md:flex bg-gray-200 rounded-full py-2 px-3 items-center'>
-                <BsFillBookmarkFill size={25} className='mr-3 text-black'/> <p className='text-black'>Saved</p>
+                <BsFillBookmarkFill size={25} className='mr-3 text-black'/> <p className='text-black font-bold'>Saved</p>
             </button>
       </div>
     )

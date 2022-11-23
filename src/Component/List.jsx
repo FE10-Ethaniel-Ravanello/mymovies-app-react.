@@ -20,11 +20,11 @@ class List extends Component {
             <div>
               <p className='font-bold text-gray pb-3'>Genre</p>
               <div>
-                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mr-2' type='button'>Action</button>
-                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mr-2' type='button'>Thriller</button>
-                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mr-2' type='button'>Sci - Fi</button>
-                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mr-2' type='button'>Adventure</button>
-                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mr-2' type='button'>Slice Of Life</button>
+                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mr-2 mb-3' type='button'>Action</button>
+                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mx-2 mb-3' type='button'>Thriller</button>
+                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mx-2 mb-3' type='button'>Sci - Fi</button>
+                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mx-2' type='button'>Adventure</button>
+                <button className='bg-gray-400 rounded-full py-1 px-3 font-bold mx-2' type='button'>Slice Of Life</button>
               </div>
             </div>
         </div>
