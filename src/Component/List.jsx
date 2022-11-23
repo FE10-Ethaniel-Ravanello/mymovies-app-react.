@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import list from '../listdata'
+
 
 class List extends Component {
   render() {
+    const { movies } = this.props;
     return (
       <div className='max-w-[1640px] mx-auto justify-between items-center p-4'>
         <h2 className='font-bold text-2xl md:text-3xl lg:text-4xl mb-2'>Top Like Movies</h2>
@@ -29,14 +30,15 @@ class List extends Component {
             </div>
         </div>
         <div className='flex flex-wrap mx-auto justify-between items-center'>
-                {list.map((list) => {
+                {movies.map((movies) => {
+                  let url = `https://image.tmdb.org/t/p/w500${movies.poster_path}`
                 return (
                 <div>
                     <div className="card max-w-[400px] mb-5 bg-base-100 shadow-xl mx-1 image-full h-[500px]">
-                        <figure><img className='object-cover w-[400px] h-[600px]' src={list.image} alt="Shoes" /></figure>
+                        <figure><img className='object-cover w-[400px] h-[600px]' src={url} alt="Shoes" /></figure>
                         <div className="card-body">
-                            <h2 className="card-title">{list.nama}</h2>
-                            <p>{list.desc}</p>
+                            <h2 className="card-title">{movies.title}</h2>
+                            <p>{movies.overview}</p>
                                 <div className="card-actions justify-end">
                                     <button button className="btn btn-primary">Watch Now</button>
                                 </div>
