@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import data from '../data'
 import drivetrailer from "../assets/Driver-trailer.mp4";
 import johntrailer from "../assets/Baba-yaga.mp4";
 import zelda from "../assets/totk.mp4"
 
-class Hero extends Component {
-  render() {
+const Hero = () => {
     return (
     <div className='max-w-[1640px] mx-auto p-4'>
         <h2 className='w-[1640px] font-bold text-5xl mb-3'>Movie Playing Now!!</h2>
@@ -33,6 +32,7 @@ class Hero extends Component {
                   loop
                   className="object-cover w-[1640px] mx-auto rounded-xl  h-full"> <source src={johntrailer} />
                   </video>
+
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                     <a href="#slide1" className="btn btn-circle">❮</a> 
                     <a href="#slide3" className="btn btn-circle">❯</a>
@@ -57,6 +57,6 @@ class Hero extends Component {
     </div>
     )
   }
-}
+
 
 export default Hero
