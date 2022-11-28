@@ -8,8 +8,8 @@ const Navbar = ({Home, Liked}) =>  {
     return (
       <div className='flex max-w-[1640px] mx-auto justify-between items-center p-4'>
             {/* Left Side */}
-            <div onClick={() => setNav(!nav)} className='flex items-center'>
-              <AiOutlineMenu className='cursor-pointer' size={30}/>
+            <div className='flex items-center'>
+              <AiOutlineMenu onClick={() => setNav(!nav)} className='cursor-pointer' size={30}/>
                 <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2'>Zora <span className='font-bold'>Watch</span></h1>
                 <div className='hidden md:flex items-center bg-gray-200 rounded-full p-1 text-[14px]'>
                     <p className='bg-black text-white rounded-full p-2'>Movies</p>

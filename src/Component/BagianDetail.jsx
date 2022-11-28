@@ -4,7 +4,7 @@ const BagianDetai = ({judul, gambar, detail, backdrop}) => {
   return (
     <div>
         <div className='max-w-[1640px] mx-auto bg-base'>
-          <div className="hero min-h-screen bg-base">
+          <div className="hero min-h-screen bg-base backdrop-blur-md">
           <div className='w-full bg-cover bg-center object-cover bg-no-repeat max-h-[921px]' >
               <img src={`https://image.tmdb.org/t/p/w500${backdrop}`} className=' w-screen object-cover' />
           </div>
