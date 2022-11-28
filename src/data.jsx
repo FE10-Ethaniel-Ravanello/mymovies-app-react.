@@ -1,20 +1,20 @@
 const data = [
 	{
 		video:
-			"https://initiate.alphacoders.com/images/494/cropped-1920-1080-494708.jpg?2373",
+			"https://www.techbuzzonline.com/wp-content/uploads/2018/06/19-Doctor-Strange-Marvel-Comic-HD-Wallpaper.jpg",
 		right: "#slide2",
 		left: "#slide1",
 		id: "slide1",
 	},
 	{
 		video:
-			"https://initiate.alphacoders.com/images/204/cropped-1920-1080-204471.jpg?7432",
+			"https://wallpaper.dog/large/10915271.jpg",
 		right: "#slide3",
 		left: "#slide1",
 		id: "slide2",
 	},
 	{
-		video: "https://images5.alphacoders.com/625/625941.png",
+		video: "https://cdn.mwallpapers.com/photos/celebrities/movies/rings-horror-movie-wallpaper-android-iphone-hd-wallpaper-background-downloadhd-wallpapers-desktop-background-android-iphone-1080p-4k-4otch.jpg",
 		right: "#slide1",
 		left: "#slide2",
 		id: "slide3",

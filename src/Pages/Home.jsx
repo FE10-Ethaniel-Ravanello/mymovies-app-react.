@@ -7,11 +7,13 @@ import Navbar from '../Component/Navbar'
 import Hero from '../Component/Hero'
 import List from '../Component/List'
 import Filter from '../Component/Filter'
+import { useCountContext } from '../Context/context'
+import Footer from '../Component/Footer'
 
 const Home = () => {
 
   const [movies, setMovies] = useState([])
-
+  const {toggle} = useCountContext()
   const navigate = useNavigate()
 
   const getNowPlaying = () => {
@@ -39,9 +41,8 @@ const Home = () => {
       />
       <Hero/>
       <Filter/>
-      <div className='flex flex-wrap max-w-[1640px] mx-auto mb-5 items-center bg-base-100 image-full justify-between h-screen'>
+      <div className={`flex flex-wrap max-w-[1920px] ${toggle ? `bg-white` : `bg-gray-800` } mx-auto items-center image-full justify-between h-max`}>
       {movies.map( movie =>(
-        <div className='flex-none'>
         <List
         title = {movie.title}
         poster_path = {movie.poster_path}
@@ -52,11 +53,10 @@ const Home = () => {
               id : movie.id
             }
           })}
-        />
-        </div>
-      
+        />   
       ))}
       </div>
+      <Footer/>
       
       </div>
     )

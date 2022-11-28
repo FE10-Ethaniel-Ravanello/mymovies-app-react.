@@ -2,15 +2,21 @@ import React, { Component, useState } from 'react'
 import {AiOutlineMenu, AiOutlineSearch, AiOutlineClose, AiFillHome, AiFillLike, AiFillQuestionCircle} from  'react-icons/ai'
 import {BsFillBookmarkFill} from 'react-icons/bs'
 import {IoIosWallet} from 'react-icons/io'
+import { useCountContext } from '../Context/context'
+import DarkMode from './DarkMode'
 
 const Navbar = ({Home, Liked}) =>  {
     const [nav, setNav] = useState(false)
+    const {toggle, handleTheme} = useCountContext()
+    
     return (
-      <div className='flex max-w-[1640px] mx-auto justify-between items-center p-4'>
+      <div className={`flex max-w-[1920px] mx-auto justify-between items-center p-4 ${toggle ? `bg-white` : `bg-gray-800` }`}>
             {/* Left Side */}
             <div className='flex items-center'>
-              <AiOutlineMenu onClick={() => setNav(!nav)} className='cursor-pointer' size={30}/>
-                <h1 className='text-2xl sm:text-3xl lg:text-4xl px-2'>Zora <span className='font-bold'>Watch</span></h1>
+              <button className={`${toggle ? `text-black` : `text-white`}`}>
+              <AiOutlineMenu onClick={() => setNav(!nav)} className='cursor-pointer z-10 ${toggle ? `text-black` : `text-white`}' size={30}/>
+              </button>
+                <h1 className={`text-2xl sm:text-3xl lg:text-4xl px-2 ${toggle ? `text-black` : `text-white`}`}>Zora <span className='font-bold'>Watch</span></h1>
                 <div className='hidden md:flex items-center bg-gray-200 rounded-full p-1 text-[14px]'>
                     <p className='bg-black text-white rounded-full p-2'>Movies</p>
                     <p className='p-2'>Series</p>
@@ -25,6 +31,8 @@ const Navbar = ({Home, Liked}) =>  {
             <button onClick={Liked} className='hidden md:flex bg-gray-200 rounded-full py-2 px-3 items-center'>
                 <BsFillBookmarkFill onClick={Liked} size={25} className='mr-3 text-black'/> <p className='text-black font-bold'>Like</p>
             </button>
+            <DarkMode className='z-50 text-white'/>
+
             {/* Mobile Nav */}
             {nav ? <div className='bg-black/80 fixed w-full h-screen z-10 top-0 left-0'></div> : '' }
             
