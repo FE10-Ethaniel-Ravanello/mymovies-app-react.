@@ -1,16 +1,18 @@
 import React from 'react'
 import {BsToggleOn} from 'react-icons/bs'
-import { useCountContext } from '../Context/context'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleDarkMode } from '../Features/DarkModeFeature'
 
-const DarkMode = ({children}) => {
 
-  const {toggle, handleTheme} = useCountContext()
+const DarkMode = () => {
+
+const {mode} = useSelector((state) => state.darkMode)
+const dispatch = useDispatch()
 
   return (
     <div>
-      {children}
-      <button className={`pt-[3px] ml-2 z-50 ${toggle ? `text-gray-800` : `text-white` }`} onClick={() => handleTheme()}>
-      <BsToggleOn size={30}/>
+      <button className={`pt-[3px] ml-2 z-50`}>
+      <BsToggleOn className={`${mode? `text-black` : `text-white`}`} onClick={() => dispatch(toggleDarkMode())} size={30}/>
       </button>
       
     </div>

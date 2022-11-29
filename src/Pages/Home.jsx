@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import api from '../api'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 
 import Navbar from '../Component/Navbar'
 import Hero from '../Component/Hero'
 import List from '../Component/List'
 import Filter from '../Component/Filter'
-import { useCountContext } from '../Context/context'
 import Footer from '../Component/Footer'
 
 const Home = () => {
 
   const [movies, setMovies] = useState([])
-  const {toggle} = useCountContext()
+  const {mode} = useSelector((state) => state.darkMode)
   const navigate = useNavigate()
 
   const getNowPlaying = () => {
@@ -41,7 +41,7 @@ const Home = () => {
       />
       <Hero/>
       <Filter/>
-      <div className={`flex flex-wrap max-w-[1920px] ${toggle ? `bg-white` : `bg-gray-800` } mx-auto items-center image-full justify-between h-max`}>
+      <div className={`flex flex-wrap max-w-[1920px] mx-auto items-center image-full justify-between h-max ${mode? `bg-white` : `bg-slate-800`}`}>
       {movies.map( movie =>(
         <List
         title = {movie.title}

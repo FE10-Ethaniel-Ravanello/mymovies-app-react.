@@ -1,33 +1,33 @@
 import React from 'react'
-import { useCountContext } from '../Context/context'
+import { useSelector } from 'react-redux'
 
 const Footer = () => {
-    const {toggle} = useCountContext()
+  const {mode} = useSelector((state) => state.darkMode)
   return (
-    <footer className={`footer p-10 ${toggle ? `bg-white` : `bg-gray-800` } ${toggle ? `text-gray-800` : `text-white` }`}>
+    <footer className={`footer p-10 ${mode? `bg-white` : `bg-slate-800`}`}>
   <div>
     <img className='w-20' src="https://i.pinimg.com/originals/de/3e/ba/de3eba287d246feec704c33cff9aee57.png" alt="" />
-    <p>Zora Domain Corp.<br/>Providing Good Quaity Movies</p>
+    <p className={`${mode? `text-black` : `text-white`}`}>Zora Domain Corp.<br/>Providing Good Quaity Movies</p>
   </div> 
   <div>
-    <span className="footer-title">Services</span> 
-    <a className="link link-hover">Branding</a> 
-    <a className="link link-hover">Design</a> 
-    <a className="link link-hover">Marketing</a> 
-    <a className="link link-hover">Advertisement</a>
+    <span className={`footer-title ${mode? `text-black` : `text-white`}`}>Services</span> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Branding</a> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Design</a> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Marketing</a> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Advertisement</a>
   </div> 
   <div>
-    <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a> 
-    <a className="link link-hover">Contact</a> 
-    <a className="link link-hover">Jobs</a> 
-    <a className="link link-hover">Press kit</a>
+    <span className={`footer-title ${mode? `text-black` : `text-white`}`}>Company</span> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>About us</a> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Contact</a> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Jobs</a> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Press kit</a>
   </div> 
   <div>
-    <span className="footer-title">Legal</span> 
-    <a className="link link-hover">Terms of use</a> 
-    <a className="link link-hover">Privacy policy</a> 
-    <a className="link link-hover">Cookie policy</a>
+    <span className={`footer-title ${mode? `text-black` : `text-white`}`}>Legal</span> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Terms of use</a> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Privacy policy</a> 
+    <a className={`link link-hover ${mode? `text-black` : `text-white`} `}>Cookie policy</a>
   </div>
 </footer>
   )

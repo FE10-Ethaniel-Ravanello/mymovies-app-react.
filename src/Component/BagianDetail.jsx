@@ -1,10 +1,8 @@
 import React from 'react'
-import { useCountContext } from '../Context/context'
 
 const BagianDetai = ({judul, gambar, detail, backdrop}) => {
-  const {toggle} = useCountContext()
   return (
-    <div className={`${toggle ? `bg-white` : `bg-gray-800` }`}>
+    <div>
         <div className={`max-w-[1640px] mx-auto`}>
           <div className="hero min-h-screen bg-base backdrop-blur-md">
           <div className='w-full bg-cover bg-center object-cover bg-no-repeat max-h-[921px]' >
