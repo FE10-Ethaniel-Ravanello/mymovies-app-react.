@@ -17,6 +17,7 @@ const Detail = () => {
     .then((response) => {
       console.log(response.data);
       setmovieDetails(response.data);
+      console.log(get_Details)
     })
     .catch((error) => {
       console.log(error);
@@ -26,6 +27,7 @@ const Detail = () => {
 useEffect(() => {
   get_Details()
 }, [])
+
 
 
 
@@ -40,7 +42,10 @@ useEffect(() => {
           gambar = {movieDetail.poster_path} 
           judul = {movieDetail.title} 
           detail = {movieDetail.overview}
-          backdrop = {movieDetail.backdrop_path} 
+          backdrop = {movieDetail.backdrop_path}
+          budget = {movieDetail.budget}
+          release = {movieDetail.release_date}
+          revenue = {movieDetail.revenue}
       />
     )}
 

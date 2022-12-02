@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BagianDetai = ({judul, gambar, detail, backdrop}) => {
+const BagianDetai = ({judul, gambar, detail, backdrop, revenue, release, budget}) => {
   return (
     <div>
         <div className={`max-w-[1640px] mx-auto`}>

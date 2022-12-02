@@ -8,7 +8,7 @@ import {Provider} from 'react-redux'
 import {store} from './store'
 
 import Home from './Pages/Home'
-import Liked from './Pages/Liked'
+import Favorite from './Pages/Favorite'
 import Detail from './Pages/Detail';
 
 const App = () =>  {
@@ -18,7 +18,7 @@ const App = () =>  {
           <BrowserRouter>
           <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='/Liked' element={<Liked />}/>
+          <Route path='/Favorite' element={<Favorite />}/>
           <Route path='/Detail' element={<Detail />}/>
           </Routes>
         </BrowserRouter>

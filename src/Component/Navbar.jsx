@@ -5,12 +5,12 @@ import {IoIosWallet} from 'react-icons/io'
 import DarkMode from '../Component/DarkMode'
 import { useSelector } from 'react-redux'
 
-const Navbar = ({Home, Liked}) =>  {
+const Navbar = ({Home, Favorite}) =>  {
     const [nav, setNav] = useState(false)
     const {mode} = useSelector((state) => state.darkMode)
     
     return (
-      <div className={`flex max-w-[1920px] ${mode? `bg-white` : `bg-slate-800`} mx-auto justify-between items-center px-12`}>
+      <div className={`flex max-w-[1920px] ${mode? `bg-white` : `bg-slate-800`} mx-auto justify-between items-center py-5 px-12`}>
             {/* Left Side */}
             <div className='flex items-center'>
               <button className='${mode? `text-black` : `text-white`}'>
@@ -28,21 +28,21 @@ const Navbar = ({Home, Liked}) =>  {
                 <input className='rounded-full bg-transparent p-2 focus:outline-none w-full' type="text" placeholder='Search For Movies Or Series' />
             </div>
             {/* Saved Button */}
-            <button onClick={Liked} className='hidden md:flex bg-gray-200 rounded-full py-2 px-3 items-center'>
-                <BsFillBookmarkFill onClick={Liked} size={25} className='mr-3 text-black'/> <p className='text-black font-bold'>Like</p>
+            <button onClick={Favorite} className='hidden md:flex bg-gray-200 rounded-full py-2 px-3 items-center'>
+                <BsFillBookmarkFill onClick={Favorite} size={25} className='mr-3 text-black'/> <p className='text-black font-bold'>Favorite</p>
             </button>
             <DarkMode className='z-50 pr-3 text-white'/>
 
             {/* Mobile Nav */}
-            {nav ? <div className='bg-black/80 fixed w-full h-screen z-10 top-0 left-0'></div> : '' }
+            {nav ? <div className='bg-black/80 fixed w-full h-screen z-50 top-0 left-0'></div> : '' }
             
-            <div className={nav ? `fixed top-0 left-0 h-screen ${mode? `bg-white` : `bg-slate-800`} ${mode? `text-black` : `text-white`} w-[300px] z-10 duration-300` : `fixed top-0 left-[-100%] h-screen ${mode? `bg-white` : `bg-slate-800`} ${mode? `text-black` : `text-white`} w-[300px] z-10 duration-300` }>
+            <div className={nav ? `fixed top-0 left-0 h-screen ${mode? `bg-white` : `bg-slate-800`} ${mode? `text-black` : `text-white`} w-[300px] z-50 duration-300` : `fixed top-0 left-[-100%] h-screen ${mode? `bg-white` : `bg-slate-800`} ${mode? `text-black` : `text-white`} w-[300px] z-10 duration-300` }>
               <AiOutlineClose onClick={() => setNav(!nav)} size={30} className='absolute right-4 top-4 cursor-pointer'/>
               <h2 className={`mt-5 ml-4 text-2xl ${mode? `text-black` : `text-white`}`}>Zora <span className='font-bold'>Watch</span></h2>
               <nav>
                 <ul className='text-gray-800 flex flex-col p-4'>
                   <li onClick={Home} className={`text-xl flex py-4 cursor-pointer ${mode? `text-black` : `text-white`}`}><AiFillHome className='mr-4' size={25}/>Home</li>
-                  <li onClick={Liked} className={`text-xl flex py-4 cursor-pointer ${mode? `text-black` : `text-white`}`}><AiFillLike className='mr-4 ' size={25}/>Like</li>
+                  <li onClick={Favorite} className={`text-xl flex py-4 cursor-pointer ${mode? `text-black` : `text-white`}`}><AiFillLike className='mr-4 ' size={25}/>Like</li>
                   <li className={`text-xl flex py-4 cursor-pointer ${mode? `text-black` : `text-white`}`}><AiFillQuestionCircle className='mr-4' size={25}/>About Us</li>
                   <li className={`text-xl flex py-4 cursor-pointer ${mode? `text-black` : `text-white`}`}><IoIosWallet className='mr-4' size={25}/>Payment</li>
                  
