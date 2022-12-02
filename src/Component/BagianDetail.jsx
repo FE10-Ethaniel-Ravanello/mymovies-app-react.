@@ -1,9 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const BagianDetai = ({judul, gambar, detail, backdrop, revenue, release, budget}) => {
+  const {mode} = useSelector((state) => state.darkMode)
   return (
-    <div>
-        <div className={`max-w-[1640px] mx-auto`}>
+    <div className={`${mode? `bg-white` : `bg-slate-800`}`}>
+        <div className={`max-w-[1640px] mx-auto ${mode? `bg-white` : `bg-slate-800`}`}>
           <div className="hero min-h-screen bg-base backdrop-blur-md">
           <div className='w-full bg-cover bg-center object-cover bg-no-repeat max-h-[921px]' >
               <img src={`https://image.tmdb.org/t/p/w500${backdrop}`} className=' w-screen object-cover' />

@@ -30,6 +30,8 @@ const Liked = () => {
                   }
                 })
               }}
+              deleteFav = {() => deleteFav()}
+              deletButton = "Delete From Favorite"
               event = {movie}
             />
           )
